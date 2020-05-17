@@ -13,6 +13,7 @@ let g:colors_name = 'quantum'
 
 let g:quantum_italics = get(g:, 'quantum_italics', 0)
 let g:quantum_black = get(g:, 'quantum_black', 0)
+let g:quantum_transparent = get(g:, 'quantum_transparent', 0)
 
 " Color Palette
 let s:gray1     = g:quantum_black ? '#212121' : '#263238'
@@ -258,4 +259,9 @@ if has('nvim')
     let g:terminal_color_15 = s:gray4
     let g:terminal_color_background = g:terminal_color_0
     let g:terminal_color_foreground = g:terminal_color_7
+endif
+
+" add transparent option
+if g:quantum_transparent
+    exec 'hi! Normal guibg=NONE ctermbg=NONE'
 endif
